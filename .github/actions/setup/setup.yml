@@ -1,0 +1,16 @@
+# .github/workflows/perm-gradlew.yml
+name: Set Executable Permission for gradlew
+
+on:
+  workflow_dispatch:
+
+jobs:
+  set-permission:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set executable permission for gradlew
+        run: chmod +x ./gradlew
